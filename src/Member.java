@@ -39,7 +39,11 @@ public class Member{
      * @param nama nama member
      */
     public void setNama(String nama) {
-        this.nama = nama;
+        if (nama != null && !nama.trim().isEmpty()){
+            this.nama = nama;
+        } else {
+            System.out.println("Nama tidak boleh kosong.");
+        }
     }
 
     /**
@@ -48,8 +52,13 @@ public class Member{
      * @param noTelepon nomor telepon member
      */
     public void setNoTelepon(String noTelepon) {
-        this.noTelepon = noTelepon;
+        if (noTelepon != null && noTelepon.matches("0[0-9]{9,}")){
+            this.noTelepon = noTelepon;
+        } else {
+        System.out.println("Nomor telepon harus diawali 0 dan minimal 10 digit.");
+        }
     }
+
 
     /**
      * Mengatur tanggal pendaftaran member.
@@ -66,6 +75,14 @@ public class Member{
      * @param jenisPaket jenis paket gym member
      */
     public void setJenisPaket(String jenisPaket) {
-        this.jenisPaket = jenisPaket;
+        if ("Basic".equals(jenisPaket)
+                || "Premium".equals(jenisPaket)
+                || "VIP".equals(jenisPaket)) {
+            this.jenisPaket = jenisPaket;
+        } else {
+            System.out.println(
+                "Paket harus Basic, Premium, atau VIP."
+            );
+        }
     }
 }
