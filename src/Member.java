@@ -66,7 +66,11 @@ public class Member{
      * @param tanggalDaftar tanggal pendaftaran member
      */
     public void setTanggalDaftar(String tanggalDaftar) {
-        this.tanggalDaftar = tanggalDaftar;
+        if (tanggalDaftar != null && !tanggalDaftar.trim().isEmpty()) {
+            this.tanggalDaftar = tanggalDaftar;
+        } else {
+            System.out.println("Tanggal pendaftaran tidak boleh kosong.");
+        }
     }
 
     /**
