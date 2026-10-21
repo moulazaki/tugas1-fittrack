@@ -6,7 +6,24 @@ public class Member{
     private String noTelepon;
     private String tanggalDaftar;
     private String jenisPaket;
+
+    private static final String DEFAULT_NAMA = "Belum diisi";
+    private static final String DEFAULT_TELEPON = "0000000000";
+    private static final String DEFAULT_TANGGAL = "Belum diisi";
+    private static final String DEFAULT_PAKET = "Basic";
+
+    private static final int MIN_PANJANG_TELEPON = 10;
     
+    /**
+ * Membuat member dengan nilai default yang aman.
+ */
+    public Member() {
+        this.nama = DEFAULT_NAMA;
+        this.noTelepon = DEFAULT_TELEPON;
+        this.tanggalDaftar = DEFAULT_TANGGAL;
+        this.jenisPaket = DEFAULT_PAKET;
+    }
+
     /**
      * Membuat member dengan seluruh data yang diberikan.
      *
@@ -40,9 +57,9 @@ public class Member{
      */
     public void setNama(String nama) {
         if (nama != null && !nama.trim().isEmpty()){
-            this.nama = nama;
+            this.nama = nama.trim();
         } else {
-            System.out.println("Nama tidak boleh kosong.");
+            System.out.println("Nama ditolak: nama tidak boleh kosong atau hanya berisi spasi.");
         }
     }
 
@@ -52,10 +69,11 @@ public class Member{
      * @param noTelepon nomor telepon member
      */
     public void setNoTelepon(String noTelepon) {
-        if (noTelepon != null && noTelepon.matches("0[0-9]{9,}")){
+        if (noTelepon != null && noTelepon.matches("[0-9]+") && noTelepon.startsWith("0")
+                && noTelepon.length() >= MIN_PANJANG_TELEPON) {
             this.noTelepon = noTelepon;
         } else {
-        System.out.println("Nomor telepon harus diawali 0 dan minimal 10 digit.");
+        System.out.println("Nomor telepon ditolak: nomor telepon harus diawali 0 dan minimal 10 digit.");
         }
     }
 
