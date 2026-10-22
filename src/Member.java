@@ -64,6 +64,15 @@ public class Member{
     }
 
     /**
+    * Mengambil nama member.
+    *
+    * @return nama member
+    */
+    public String getNama() {
+        return nama;
+    }
+
+    /**
      * Mengatur nomor telepon member.
      *
      * @param noTelepon nomor telepon member
@@ -77,6 +86,14 @@ public class Member{
         }
     }
 
+    /**
+    * Mengambil nomor telepon member.
+    *
+    * @return nomor telepon member
+    */
+    public String getNoTelepon() {
+        return noTelepon;
+    }
 
     /**
      * Mengatur tanggal pendaftaran member.
@@ -85,10 +102,19 @@ public class Member{
      */
     public void setTanggalDaftar(String tanggalDaftar) {
         if (tanggalDaftar != null && !tanggalDaftar.trim().isEmpty()) {
-            this.tanggalDaftar = tanggalDaftar;
+            this.tanggalDaftar = tanggalDaftar.trim();
         } else {
-            System.out.println("Tanggal pendaftaran tidak boleh kosong.");
+            System.out.println("Tanggal pendaftaran ditolak: Tanggal pendaftaran tidak boleh kosong.");
         }
+    }
+
+    /**
+    * Mengambil tanggal pendaftaran member.
+    *
+    * @return tanggal pendaftaran member
+    */
+    public String getTanggalDaftar() {
+        return tanggalDaftar;
     }
 
     /**
@@ -106,5 +132,14 @@ public class Member{
                 "Paket harus Basic, Premium, atau VIP."
             );
         }
+    }
+
+    /**
+    * Mengambil jenis paket member.
+    *
+     * @return jenis paket member
+    */
+    public String getJenisPaket() {
+        return jenisPaket;
     }
 }
