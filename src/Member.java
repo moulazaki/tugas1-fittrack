@@ -142,4 +142,17 @@ public class Member{
     public String getJenisPaket() {
         return jenisPaket;
     }
+
+    /**
+    * Menghasilkan informasi member dalam format yang mudah dibaca.
+    *
+    * @return informasi member dengan label atribut
+    */
+    @Override
+    public String toString() {
+        return "Nama: " + nama
+                + ", Nomor Telepon: " + noTelepon
+                + ", Tanggal Daftar: " + tanggalDaftar
+                + ", Jenis Paket: " + jenisPaket;
+    }
 }
