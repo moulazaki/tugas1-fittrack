@@ -1,18 +1,20 @@
 /**
  * Merepresentasikan data member gym FitTrack
+ * Setiap atribut diatur melalui setter yang memiliki validasi
  */
 public class Member{
-    private String nama;
-    private String noTelepon;
-    private String tanggalDaftar;
-    private String jenisPaket;
-
     private static final String DEFAULT_NAMA = "Belum diisi";
     private static final String DEFAULT_TELEPON = "0000000000";
     private static final String DEFAULT_TANGGAL = "Belum diisi";
     private static final String DEFAULT_PAKET = "Basic";
 
     private static final int MIN_PANJANG_TELEPON = 10;
+
+    private String nama;
+    private String noTelepon;
+    private String tanggalDaftar;
+    private String jenisPaket;
+
     
     /**
  * Membuat member dengan nilai default yang aman.
@@ -47,7 +49,16 @@ public class Member{
      * @param tanggalDaftar tanggal pendaftaran member
      */
     public Member(String nama, String noTelepon, String tanggalDaftar) {
-        this(nama, noTelepon, tanggalDaftar, "Basic");
+        this(nama, noTelepon, tanggalDaftar, DEFAULT_PAKET);
+    }
+
+    /**
+    * Mengambil nama member.
+    *
+    * @return nama member
+    */
+    public String getNama() {
+        return nama;
     }
 
     /**
@@ -64,12 +75,12 @@ public class Member{
     }
 
     /**
-    * Mengambil nama member.
+    * Mengambil nomor telepon member.
     *
-    * @return nama member
+    * @return nomor telepon member
     */
-    public String getNama() {
-        return nama;
+    public String getNoTelepon() {
+        return noTelepon;
     }
 
     /**
@@ -87,12 +98,12 @@ public class Member{
     }
 
     /**
-    * Mengambil nomor telepon member.
+    * Mengambil tanggal pendaftaran member.
     *
-    * @return nomor telepon member
+    * @return tanggal pendaftaran member
     */
-    public String getNoTelepon() {
-        return noTelepon;
+    public String getTanggalDaftar() {
+        return tanggalDaftar;
     }
 
     /**
@@ -109,12 +120,12 @@ public class Member{
     }
 
     /**
-    * Mengambil tanggal pendaftaran member.
+    * Mengambil jenis paket member.
     *
-    * @return tanggal pendaftaran member
+     * @return jenis paket member
     */
-    public String getTanggalDaftar() {
-        return tanggalDaftar;
+    public String getJenisPaket() {
+        return jenisPaket;
     }
 
     /**
@@ -129,18 +140,9 @@ public class Member{
             this.jenisPaket = jenisPaket;
         } else {
             System.out.println(
-                "Paket harus Basic, Premium, atau VIP."
+                "Paket ditolak: Paket harus Basic, Premium, atau VIP."
             );
         }
-    }
-
-    /**
-    * Mengambil jenis paket member.
-    *
-     * @return jenis paket member
-    */
-    public String getJenisPaket() {
-        return jenisPaket;
     }
 
     /**
