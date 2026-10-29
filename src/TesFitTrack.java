@@ -22,6 +22,23 @@ public class TesFitTrack {
                 "18-08-2026",
                 "Premium"
             ),
+            new Member(
+                "Citra Amelia",
+                "083456789012",
+                "19-08-2026",
+                "VIP"
+            ),
+            new Member(
+                "Dina Putri",
+                "084567890123",
+                "20-08-2026"
+            )
+        };
+
+        System.out.println("=== DATA MEMBER FITTRACK ===");
+
+        for (int i = 0; i < daftarMember.length; i++) {
+            System.out.println(daftarMember[i].toString());
         };
     }
 }
