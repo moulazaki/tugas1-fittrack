@@ -39,6 +39,18 @@ public class TesFitTrack {
 
         for (int i = 0; i < daftarMember.length; i++) {
             System.out.println(daftarMember[i].toString());
-        };
+        }
+
+        System.out.println("\n=== UJI CONSTRUCTOR TIDAK VALID ===");
+
+        Member memberTidakValid = new Member(
+            "   ",
+            "812345",
+            "   ",
+            "Gold"
+        );
+
+        System.out.println(memberTidakValid);
+        
     }
 }
