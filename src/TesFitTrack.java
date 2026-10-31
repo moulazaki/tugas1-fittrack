@@ -52,5 +52,21 @@ public class TesFitTrack {
 
         System.out.println(memberTidakValid);
         
+        System.out.println("\n=== UJI SETTER TIDAK VALID ===");
+
+        String teleponSebelum = daftarMember[0].getNoTelepon();
+
+        System.out.println("Nomor sebelum: " + teleponSebelum);
+
+        daftarMember[0].setNoTelepon("123");
+
+        System.out.println(
+            "Nomor sesudah: " + daftarMember[0].getNoTelepon()
+        );
+
+        System.out.println(
+            "Nilai lama tetap: "
+            + teleponSebelum.equals(daftarMember[0].getNoTelepon())
+        );
     }
 }
