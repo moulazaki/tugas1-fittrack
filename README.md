@@ -47,3 +47,21 @@ tugas1-fittrack/
 - src/TesFitTrack.java
 - .gitignore
 - README.md
+
+## Prasyarat
+- JDK yang mendukung kompilasi kode Java.
+- Visual Studio Code.
+- Extension Pack for Java pada VS Code.
+
+## Cara Menjalankan di VS Code
+1. Buka folder project tugas1-fittrack.
+2. Pastikan JDK dan extension Java sudah terpasang.
+3. Buka src/TesFitTrack.java.
+4. Jalankan method main menggunakan tombol Run.
+
+## Cara Menjalankan melalui Terminal
+Jalankan perintah berikut dari folder utama project:
+
+```bash
+javac -d out src/Member.java src/TesFitTrack.java
+java -cp out TesFitTrack
