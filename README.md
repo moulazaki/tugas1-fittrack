@@ -65,3 +65,20 @@ Jalankan perintah berikut dari folder utama project:
 ```bash
 javac -d out src/Member.java src/TesFitTrack.java
 java -cp out TesFitTrack
+
+## Nilai Default
+- Nama: Belum diisi
+- Nomor telepon: 0000000000
+- Tanggal daftar: Belum diisi
+- Jenis paket: Basic
+
+Nilai default digunakan agar objek tetap dapat terbentuk ketika
+input tidak valid. Nomor telepon default hanya placeholder untuk
+memenuhi format validasi, bukan nomor kontak member yang sebenarnya.
+
+## Batasan dan Pengembangan Lanjutan
+- Data belum disimpan ke database atau file.
+- Data hanya tersedia selama program berjalan.
+- Program belum memiliki antarmuka grafis.
+- Pengembangan selanjutnya dapat mencakup penyimpanan permanen,
+  pencarian member, pengubahan data, dan penghapusan data.
